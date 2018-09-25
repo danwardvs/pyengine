@@ -1,7 +1,9 @@
 
 from enum import Enum
 
-class state(object):
+
+
+class State(object):
     
     state_id = 0
     next_state = 0
@@ -15,4 +17,14 @@ class state(object):
         STATE_EDIT = 5
         STATE_EXIT = 6
     
+    def get_next_state(self):
+        return self.next_state
+    
+    def set_next_state(self,new_state):
+        
+        self.next_state=new_state
+        
+    def get_state_id(self):
+        
+        return self.state_id
     

@@ -8,6 +8,7 @@ pygame.display.flip()
 from state import State
 from menu import Menu
 from init import Init
+from game import Game
 
 current_state = Init()
 
@@ -19,11 +20,12 @@ def change_state(new_state):
     global current_state
 
     if new_state != State.program_states.STATE_NULL:
-        print("buttz galore")
         if new_state == State.program_states.STATE_MENU.value:
             current_state = Menu()
-            print("buttz mkgee")
 
+        if new_state == State.program_states.STATE_GAME.value:
+            current_state = Game()
+            current_state.set_display(game_display)
 
 
 while running:
@@ -36,12 +38,11 @@ while running:
     
     for event in pygame.event.get():
         
-        
-
         if event.type == pygame.QUIT:
             running = False
     
     current_state.update()
+     
 
     
     game_display.fill((255,255,255))

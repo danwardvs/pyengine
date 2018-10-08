@@ -43,8 +43,8 @@ class World():
     
     def __init__(self,new_display):
         self.b2_game_world = b2World()  # default gravity is (0,-10) and doSleep is True
-        self.groundBody = self.b2_game_world.CreateStaticBody(position=(0, -10),
-                                    shapes=b2PolygonShape(box=(50, 10)),
+        self.groundBody = self.b2_game_world.CreateStaticBody(position=(0, -48),
+                                    shapes=b2PolygonShape(box=(80, 10)),
                                     )
         # Create a dynamic body at (0, 4)
         self.body = self.b2_game_world.CreateDynamicBody(position=(0, 4))
@@ -55,6 +55,12 @@ class World():
         self.game_display = new_display
         
         self.create_box(10,10,5,5)
+        self.create_box(15,10,5,5)
+        self.create_box(20,10,5,5)
+        self.create_box(25,10,5,5)
+        self.create_box(30,10,5,5)
+        self.create_box(35,10,5,5)
+        
 
         
 

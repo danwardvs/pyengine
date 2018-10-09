@@ -32,7 +32,6 @@ def change_state(new_state):
 
 while running:
     
-    MouseListener.mouse_x=69969696    
     clock.tick(60)
     
     change_state(current_state.get_next_state())
@@ -43,12 +42,19 @@ while running:
             running = False
         
         elif event.type == pygame.MOUSEMOTION:
-            print( "mouse at (%d, %d)" % event.pos)
+            MouseListener.update_pos(event)
         
+        elif event.type == pygame.MOUSEBUTTONUP:
+            MouseListener.update_button_up(event)
+        
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            MouseListener.update_button_down(event)
     
     current_state.update()
     
-    MouseListener.set_x()
+    MouseListener.update()
+    
+    
     
     game_display.fill((255,255,255))
 

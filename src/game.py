@@ -30,6 +30,13 @@ class Game(State):
         self.game_world.draw()
         
     def update(self):
+        
+        if MouseListener.button_pressed[MouseListener.Buttons.MOUSE_LEFT_CLICK.value]:
+            self.game_world.create_box(MouseListener.mouse_x/20, -(MouseListener.mouse_y/20), 5, 5)
+            
+        if MouseListener.button_pressed[MouseListener.Buttons.MOUSE_RIGHT_CLICK.value]:
+            self.game_world.create_box(MouseListener.mouse_x/20, -(MouseListener.mouse_y/20), 1, 1)
+            
         self.game_world.update()
 
         

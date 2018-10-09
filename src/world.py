@@ -47,20 +47,11 @@ class World():
                                     shapes=b2PolygonShape(box=(80, 10)),
                                     )
         # Create a dynamic body at (0, 4)
-        self.body = self.b2_game_world.CreateDynamicBody(position=(0, 4))
-
-# And add a box fixture onto it (with a nonzero density, so it will move)
-        self.box = self.body.CreatePolygonFixture(box=(1, 1), density=1, friction=0.3)
-        print(type(new_display))
+     
         self.game_display = new_display
         
         self.create_box(10,10,5,5)
-        self.create_box(15,10,5,5)
-        self.create_box(20,10,5,5)
-        self.create_box(25,10,5,5)
-        self.create_box(30,10,5,5)
-        self.create_box(35,10,5,5)
-        
+ 
 
         
 

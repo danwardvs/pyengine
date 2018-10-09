@@ -27,10 +27,10 @@ class Box(object):
         self.height = new_height
 
     # And add a box fixture onto it (with a nonzero density, so it will move)
-        self.box = self.body.CreatePolygonFixture(box=(new_width, new_height), density=1, friction=0.3)
+        self.box = self.body.CreatePolygonFixture(box=(new_width/2, new_height/2), density=1, friction=0.3)
         
     def draw(self):
-        pygame.draw.rect(self.game_display,(0,0,255),[20*(self.body.position.x-(self.width/2)),-20*(self.body.position.y-self.height/2),10,10],2)
+        pygame.draw.rect(self.game_display,(0,0,255),[20*(self.body.position.x)-self.width*10,-20*(self.body.position.y)-self.height*10,self.width*20,self.height*20],1)
 
 
         

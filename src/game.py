@@ -32,7 +32,7 @@ class Game(State):
     def update(self):
         
         if MouseListener.button_pressed[MouseListener.Buttons.MOUSE_LEFT_CLICK.value]:
-            self.game_world.create_box(MouseListener.mouse_x/20, -(MouseListener.mouse_y/20), 5, 5)
+            self.game_world.create_box(MouseListener.mouse_x/20, -(MouseListener.mouse_y/20), 1.6, 1.6)
             
         if MouseListener.button_pressed[MouseListener.Buttons.MOUSE_RIGHT_CLICK.value]:
             self.game_world.create_box(MouseListener.mouse_x/20, -(MouseListener.mouse_y/20), 1, 1)

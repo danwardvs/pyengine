@@ -50,7 +50,6 @@ class World():
      
         self.game_display = new_display
         
-        self.create_box(10,10,5,5)
  
 
         

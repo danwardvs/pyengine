@@ -13,6 +13,7 @@ import pygame
 from state import State
 from world import World
 from mouselistener import MouseListener
+from keylistener import KeyListener
 
 class Game(State):
     
@@ -36,6 +37,13 @@ class Game(State):
             
         if MouseListener.button_pressed[MouseListener.Buttons.MOUSE_RIGHT_CLICK.value]:
             self.game_world.create_box(MouseListener.mouse_x/20, -(MouseListener.mouse_y/20), 1, 1)
+        
+        if KeyListener.key_pressed[pygame.K_r]:
+            self.game_world.create_box(MouseListener.mouse_x/20, -(MouseListener.mouse_y/20), 1.6, 1.6)
+            
+        if KeyListener.key[pygame.K_e]:
+            self.game_world.create_box(MouseListener.mouse_x/20, -(MouseListener.mouse_y/20), 1.6, 1.6)
+
             
         self.game_world.update()
 

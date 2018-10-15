@@ -15,7 +15,7 @@ import pygame
 
 class Box(object):
     
-    game_sprite = pygame.image.load("images/box.png")
+    game_sprite = pygame.image.load("box.png")
 
     
     body = None

@@ -10,6 +10,7 @@ from menu import Menu
 from init import Init
 from game import Game
 from mouselistener import MouseListener
+from keylistener import KeyListener
 
 current_state = Init()
 
@@ -49,10 +50,17 @@ while running:
         
         elif event.type == pygame.MOUSEBUTTONDOWN:
             MouseListener.update_button_down(event)
+        
+        elif event.type == pygame.KEYDOWN:
+            KeyListener.update_key_down(event)
+        
+        elif event.type == pygame.KEYUP:
+            KeyListener.update_key_up(event)
     
     current_state.update()
     
     MouseListener.update()
+    KeyListener.update()
     
     
     
